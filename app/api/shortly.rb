@@ -11,7 +11,8 @@ class API::Shortly < API::Base
   route_param :hash do
     get do
       url = Shortly.get(params[:hash])
-      # redirect to url with 303
+      # redirect to url with 302
+      redirect url, permanent: true
     end
   end
 end

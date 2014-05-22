@@ -29,14 +29,14 @@ Returns: `https://localhost:9292/S0m3H4sh`
 
 ### GET /:hash
 
-Get the redirect for the URL behind the hash with 303.
+Get the redirect for the URL behind the hash with 302.
 
 Example CURL request:
 ```bash
 curl -X GET 0.0.0.0:9292/50m3H4sh
 ```
 
-Returns with 303 header redirect to found URL
+Returns with 302 header redirect to found URL
 
 ### GET /admin/stats
 
