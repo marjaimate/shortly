@@ -8,13 +8,13 @@ URL shortener service
 * [Install Redis](http://redis.io/download)
 * Start redis - see the same page as above
 * clone the repo
+* Verify redis.yml config for connection details
 * `$ bundle install`
-* Verify database.yml config for Redis connection details
 * `$ rackup`
 
 ## Endpoints
 
-### POST /
+### PUT /
 
 Create a short version for the URL posted in. Returns with 200 if successful.
 
