@@ -11,7 +11,7 @@ class API::Admin < API::Base
       desc "Get domain specific stats"
       route_param :domain do
         get do
-          Shortly.stats(params[:domain])
+          Shortly.stats("#{params[:domain]}.#{params[:format]}")
         end
       end
     end

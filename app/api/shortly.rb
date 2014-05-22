@@ -4,13 +4,14 @@ class API::Shortly < API::Base
     requires :url, type: String, desc: "URL."
   end
   put '/' do
-    Shortly.save(params[:url])
+    hash = Shortly.save(params[:url])
+    "#{Application.config.base_path}/#{hash}"
   end
 
   route_param :hash do
     get do
-      puts params.inspect
-      Shortly.get(params[:hash])
+      url = Shortly.get(params[:hash])
+      # redirect to url with 303
     end
   end
 end

@@ -14,6 +14,14 @@ class API::Base < Grape::API
           message: e.message
         }.to_json, 500).finish
       end
+
+      rescue_from PublicSuffix::DomainInvalid do |e|
+        puts "URL parsing error"
+        Rack::Response.new({
+          error: "#{e.class} error",
+          message: e.message
+        }.to_json, 500).finish
+      end
     end
   end
 
