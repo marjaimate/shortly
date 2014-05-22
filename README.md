@@ -3,6 +3,15 @@ shortly
 
 URL shortener service
 
+## Setup
+
+* [Install Redis](http://redis.io/download)
+* Start redis - see the same page as above
+* clone the repo
+* `$ bundle install`
+* Verify database.yml config for Redis connection details
+* `$ rackup`
+
 ## Endpoints
 
 ### POST /
@@ -26,3 +35,7 @@ An endpoint that returns the total accesses of the service endpoints, i.e. how m
 
 The other endpoint gets a domain name as input and returns how many URLs we maintain for this domain.
 For example example.com, www.example.com and developers.example.com are considered to be in the same domain and counted together. The returned result is not required to be completely accurate.
+
+## Scalability
+
+For scalability I would run Redis as a separate instance all Ruby clients connecting to it via IP:PORT. In that case you'd get consistent data for your admin and hit counters in the store.
