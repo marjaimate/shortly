@@ -13,7 +13,7 @@ class Shortly
       $redis.incr "GET"
     end
     puts "FOUND #{hash_key}: #{url}"
-    url
+    URI.parse(url).scheme.nil? ? "http://#{url}" : url
   end
 
   def self.save(url)
