@@ -10,7 +10,7 @@ URL shortener service
 * clone the repo
 * Verify redis.yml config for connection details
 * `$ bundle install`
-* `$ thin -R config.ru -a 127.0.0.1 -p 8080 start`
+* `$ thin -R config.ru -a 127.0.0.1 -p 9292 start`
 
 ## Endpoints
 
